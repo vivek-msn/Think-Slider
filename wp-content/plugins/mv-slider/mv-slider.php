@@ -35,3 +35,15 @@ if ( !defined( 'ABSPATH' ) ) {
     die('You Do not Access Directly');
     exit;
 }
+
+if( ! class_exists('MV_Slider' ) ){
+    class MV_Slider{
+        function __construct(){
+
+        }
+    }
+}
+
+if( class_exists( 'MV_Slider' ) ){
+    $mv_slider = new MV_Slider();
+}
