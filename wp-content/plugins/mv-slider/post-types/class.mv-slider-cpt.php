@@ -4,6 +4,7 @@
     class MV_Slider_Post_Type{
         function __construct(){
             add_action('init',array($this,'create_post_type'));
+            add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
         }
 
         public function create_post_type(){
