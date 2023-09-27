@@ -43,11 +43,15 @@
             add_meta_box(
                 'mv_slider_meta_box',
                 'Link Options',
+                array( $this, 'add_inner_meta_boxes' ),
+                'mv-slider',
+                'normal',
+                'high'
             );
         }
 
-        public function add_inner_meta_boxes(){
-            
+        public function add_inner_meta_boxes( $post ){
+
         }
     }
  }
