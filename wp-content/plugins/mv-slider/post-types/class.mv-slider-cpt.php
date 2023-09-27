@@ -9,6 +9,9 @@
 
             // Hook into the 'add_meta_boxes' action to add custom meta boxes
             add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+
+            // Hook into the 'save_post' action to save post in table
+            add_action( 'save_post', array( $this, 'save_post'), 10, 2 );
         }
 
         public function create_post_type(){
