@@ -3,7 +3,11 @@
  if( !class_exists( 'MV_slider_Post_Type') ){
     class MV_Slider_Post_Type{
         function __construct(){
+
+            // Hook into the 'init' action to add custom post type
             add_action('init',array($this,'create_post_type'));
+
+            // Hook into the 'add_meta_boxes' action to add custom meta boxes
             add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
         }
 
@@ -33,6 +37,17 @@
                     'menu_icon' => 'dashicons-leftright'
                 )
             );
+        }
+
+        public function add_meta_boxes(){
+            add_meta_box(
+                'mv_slider_meta_box',
+                'Link Options',
+            );
+        }
+
+        public function add_inner_meta_boxes(){
+            
         }
     }
  }
