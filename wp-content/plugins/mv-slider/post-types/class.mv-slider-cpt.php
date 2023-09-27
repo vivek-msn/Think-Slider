@@ -51,7 +51,7 @@
         }
 
         public function add_inner_meta_boxes( $post ){
-
+            require_once( MV_SLIDER_PATH. 'view/mv-slider_metabox.php' );
         }
     }
  }
