@@ -7,7 +7,18 @@
         }
 
         public function create_post_type(){
-            
+            register_post_type(
+                'mv-slider',
+                array(
+                    'label' => 'Slider',
+                    'description' => 'Sliders',
+                    'labels' => array(
+                        'name' => 'Sliders',
+                        'singular_name' => 'Slider'
+                    ),
+                    'public' => true
+                )
+            );
         }
     }
  }
