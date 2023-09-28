@@ -12,6 +12,15 @@
 
             // Hook into the 'save_post' action to save post in table
             add_action( 'save_post', array( $this, 'save_post'), 10, 2 );
+
+            // Hook into the 'manage_mv-slider_posts_columns' filter to display more columns in cpt
+            add_filter( 'manage_mv-slider_posts_columns', array( $this, 'mv_slider_cpt_columns' ));
+
+            // Hook into the 'manage_mv-slider_posts_custom_column' action to display data in columns of cpt
+            add_action( 'manage_mv-slider_posts_custom_column', array( $this, 'mv_slider_custom_columns'), 10, 2 );
+
+            // Hook into the 'manage_mv-slider_sortable_columns' filter to sort columns of cpt in asc or desc
+            add_filter( 'manage_edit-mv-slider_sortable_columns', array( $this, 'mv_slider_sortable_columns' ) );
         }
 
         public function create_post_type(){
@@ -42,6 +51,8 @@
             );
         }
 
+       
+
         public function add_meta_boxes(){
             add_meta_box(
                 'mv_slider_meta_box',
@@ -51,6 +62,28 @@
                 'normal',
                 'high'
             );
+        }
+
+        public function mv_slider_cpt_columns( $columns ){
+            $columns['mv_slider_link_text'] = esc_html__( 'Link Text', 'mv-slider' );
+            $columns[ 'mv_slider_link_url'] = esc_html__( 'Link URL', 'mv-slider' );
+            return $columns;
+        }
+
+        public function mv_slider_custom_columns( $column, $post_id){
+            switch( $column ){
+                case 'mv_slider_link_text':
+                    echo esc_html( get_post_meta( $post_id, 'mv_slider_link_text', true ) );
+                break;
+                case 'mv_slider_link_url':
+                    echo esc_url( get_post_meta( $post_id, 'mv_slider_link_url', true ) );
+                break;
+            }
+        }
+
+        public function mv_slider_sortable_columns( $columns ){
+            $columns['mv_slider_link_text'] = 'mv_slider_link_text';
+            return $columns;
         }
 
         public function add_inner_meta_boxes( $post ){
