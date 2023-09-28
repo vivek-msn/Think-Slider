@@ -105,6 +105,27 @@ if( ! class_exists('MV_Slider' ) ){
                 'mv_slider_admin',
                 array(  $this, 'mv_slider_settings_page' ),
             );*/
+
+             #Adding Submenus
+            add_submenu_page(
+                'mv_slider_admin',
+                'Manage Slides',
+                'Manage Slides',
+                'manage_options',
+                'edit.php?post_type=mv-slider',
+                null,
+                null
+            );
+            #Adding Submenus
+            add_submenu_page(
+                'mv_slider_admin',
+                'Add New Slide',
+                'Add New Slide',
+                'manage_options',
+                'post-new.php?post_type=mv-slider',
+                null,
+                null
+            );
         }
 
         //This is a call back function which trigger in function name add_menu

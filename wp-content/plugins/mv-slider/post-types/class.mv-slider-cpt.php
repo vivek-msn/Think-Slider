@@ -37,7 +37,7 @@
                     'supports' => array( 'title', 'editor', 'thumbnail' ),
                     'hierarchical' => false,
                     'show_ui'   => true,
-                    'show_in_menu' => true,
+                    'show_in_menu' => false,
                     'menu_position' => 65,
                     'show_in_admin_bar' => true,
                     'show_in_nav_menus' => true,
