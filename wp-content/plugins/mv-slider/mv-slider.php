@@ -116,6 +116,7 @@ if( ! class_exists('MV_Slider' ) ){
                 null,
                 null
             );
+            
             #Adding Submenus
             add_submenu_page(
                 'mv_slider_admin',
