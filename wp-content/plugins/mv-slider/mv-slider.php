@@ -41,6 +41,9 @@ if( ! class_exists('MV_Slider' ) ){
         function __construct(){
             $this->define_constants();
 
+            // Hook into the 'admin_menu' action to add admin menu
+            add_action( 'admin_menu',array( $this,'add_menu' ) );
+
             require_once( MV_SLIDER_PATH. 'post-types/class.mv-slider-cpt.php' );
             $MV_Slider_Post_Type = new MV_Slider_Post_Type();
         }
@@ -62,6 +65,51 @@ if( ! class_exists('MV_Slider' ) ){
 
         public static function uninstall(){
             
+        }
+
+        // This is a Callback function of hook
+        public function add_menu(){
+        // This is a wordpress function with parameters to display menu below settings options in wp dashboard    
+             add_menu_page(
+                'MV Slider Options',
+                'MV Slider',
+                'manage_options',
+                'mv_slider_admin',
+                array(  $this, 'mv_slider_settings_page' ),
+                'dashicons-images-alt2',
+            );
+
+            // This is a wordpress function with parameters to display menu under the settings options of plugins page  
+            /*add_plugins_page(
+                'MV Slider Options',
+                'MV Slider',
+                'manage_options',
+                'mv_slider_admin',
+                array(  $this, 'mv_slider_settings_page' ),
+            );*/
+
+            // This is a wordpress function with parameters to display menu under the settings options of themes page   
+            /*add_theme_page(
+                'MV Slider Options',
+                'MV Slider',
+                'manage_options',
+                'mv_slider_admin',
+                array(  $this, 'mv_slider_settings_page' ),
+            );*/
+
+             // This is a wordpress function with parameters to display menu under the settings options of themes page
+             /*add_options_page(
+                'MV Slider Options',
+                'MV Slider',
+                'manage_options',
+                'mv_slider_admin',
+                array(  $this, 'mv_slider_settings_page' ),
+            );*/
+        }
+
+        //This is a call back function which trigger in function name add_menu
+        public function mv_slider_settings_page(){
+            echo "This is a test page";
         }
     }
 }
