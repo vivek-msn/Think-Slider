@@ -134,6 +134,16 @@ if( ! class_exists('MV_Slider' ) ){
 
         //This is a call back function which triggers Settings+Options API-Creating Form
         public function mv_slider_settings_page(){
+            if( !current_user_can( 'manage_options' ) ){
+                return;
+            }
+
+            if( isset( $_GET['settings-updated'] ) ){
+                add_settings_error( 'mv_slider_options', 'mv_slider_message', 'settings Saved', 'success' );
+            }
+            
+            settings_errors( 'mv_slider_options' );
+
             require( MV_SLIDER_PATH . 'views/settings-page.php' );
         }
     }
