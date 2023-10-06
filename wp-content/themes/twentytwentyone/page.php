@@ -11,10 +11,9 @@
 
 get_header();
 
-do_shortcode("[mv_slider]Just a title[/mv_slider]");
-?>
 
-<?php
+
+
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();
@@ -25,7 +24,6 @@ while ( have_posts() ) :
 		comments_template();
 	}
 endwhile; // End of the loop.
-?>
 
-<?php
+
 get_footer();
