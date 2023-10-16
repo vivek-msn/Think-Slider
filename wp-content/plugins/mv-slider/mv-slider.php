@@ -41,6 +41,8 @@ if( ! class_exists('MV_Slider' ) ){
         function __construct(){
             $this->define_constants();
 
+            $this->load_textdomain();
+
             require_once( MV_SLIDER_PATH. 'functions/functions.php' );
 
             // Hook into the 'admin_menu' action to add admin menu
@@ -80,6 +82,28 @@ if( ! class_exists('MV_Slider' ) ){
 
         public static function uninstall(){
             
+            delete_option( 'mv_slider_options' );
+
+            $posts = get_posts(
+                array(
+                    'post_type' => 'mv-slider',
+                    'number_posts' => -1,
+                    'post_status' => 'any'
+                )
+            );
+
+            foreach( $posts as $post ){
+                wp_delete_post( $post->ID, true );
+            }
+        }
+
+        
+        public function load_textdomain(){
+            load_plugin_textdomain(
+                'mv-testimonials',
+                false,
+                dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+            );
         }
 
         // This is a Callback function of hook

@@ -35,6 +35,8 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		 */
 		load_theme_textdomain( 'twentytwentyone', get_template_directory() . '/languages' );
 
+		add_theme_support( 'mv-testimonials' );
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
