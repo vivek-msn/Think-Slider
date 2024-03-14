@@ -69,6 +69,12 @@ html[xmlns] .flexslider .slides {
 .no-js .flexslider .slides > li:first-child {
   display: block;
 }
+.flexslider {
+  width: 100%; /* Set the width of the slider */
+  max-width: 800px; /* Optionally, set a maximum width */
+  height: 400px; /* Set the height of the slider */
+}
+
 /* ====================================================================================================================
  * DEFAULT THEME
  * ====================================================================================================================*/
