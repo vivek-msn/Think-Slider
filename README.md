@@ -10,6 +10,10 @@ Think Slider is a simple yet powerful WordPress plugin that allows you to easily
 - Responsive design ensures that your sliders look great on all devices.
 - Lightweight and optimized for performance.
 
+## Demo
+You can see a live demo [here](https://slider.ithinkservices.com/).
+
+
 ## Installation
 
 1. Download the plugin zip file from the [GitHub repository](https://codeload.github.com/vivek-msn/Think-Slider/zip/refs/heads/main).
