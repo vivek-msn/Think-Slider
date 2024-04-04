@@ -12,7 +12,7 @@ Think Slider is a simple yet powerful WordPress plugin that allows you to easily
 
 ## Installation
 
-1. Download the plugin zip file from the [GitHub repository](https://github.com/vivek-msn/Think-Slider.git).
+1. Download the plugin zip file from the [GitHub repository](https://codeload.github.com/vivek-msn/Think-Slider/zip/refs/heads/main).
 2. Log in to your WordPress admin panel.
 3. Navigate to Plugins > Add New.
 4. Click the "Upload Plugin" button and select the plugin zip file you downloaded.
