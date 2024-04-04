@@ -1,4 +1,4 @@
-# Think Slider WordPress Plugin
+# MV Slider WordPress Plugin
 
 MV Slider is a simple yet powerful WordPress plugin that allows you to easily create and display sliders on your WordPress website. With MV Slider, you can effortlessly add image sliders to your posts, pages, widgets, or anywhere else on your site.
 
