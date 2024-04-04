@@ -1,6 +1,6 @@
 # Think Slider WordPress Plugin
 
-Think Slider is a simple yet powerful WordPress plugin that allows you to easily create and display sliders on your WordPress website. With Think Slider, you can effortlessly add image sliders to your posts, pages, widgets, or anywhere else on your site.
+MV Slider is a simple yet powerful WordPress plugin that allows you to easily create and display sliders on your WordPress website. With MV Slider, you can effortlessly add image sliders to your posts, pages, widgets, or anywhere else on your site.
 
 ## Features
 
@@ -26,7 +26,7 @@ You can see a live demo [here](https://slider.ithinkservices.com/).
 
 Once the plugin is activated, follow these steps to create and display a slider:
 
-1. Navigate to Think Slider > Add New Slider in your WordPress admin panel.
+1. Navigate to MV Slider > Add New Slider in your WordPress admin panel.
 2. Give your slider a name and configure its settings, including style settings, Bullet buttons, Custom Text, and more etc.
 3. Save your slider.
 4. Copy the shortcode provided for your slider.
